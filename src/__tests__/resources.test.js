@@ -18,3 +18,7 @@ test("should return state +1 ", () => {
 test("Should return -1 ", () => {
 	expect(resources(0, { type: "DECREMENT" })).toBe(-1);
 });
+
+test("Should be state", () => {
+	expect(resources(0, { type: "uknkow" })).toBe(0);
+});
