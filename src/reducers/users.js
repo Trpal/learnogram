@@ -1,4 +1,4 @@
-export default function users(state, action) {
+export default function users(state = {}, action) {
 	switch (action.type) {
 	case "LOGIN":
 		return state + 1;

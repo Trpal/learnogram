@@ -1,4 +1,4 @@
-export default function resources(state, action) {
+export default function resources(state = {}, action) {
 	switch (action.type) {
 	case "INCREMENT":
 		return state + 1;
