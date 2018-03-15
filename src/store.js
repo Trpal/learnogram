@@ -1,6 +1,10 @@
-import { createStore } from "redux";
+import { createStore, compose } from "redux";
 import rootReducer from "./reducers/index";
 
-const store = createStore(rootReducer);
+const enhancers = compose(
+	window.devToolsExtension ? window.devToolsExtension() : f => f
+);
+
+const store = createStore(rootReducer, enhancers);
 
 export default store;

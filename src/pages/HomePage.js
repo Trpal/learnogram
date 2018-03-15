@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
+import { Button } from "react-bootstrap";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -14,6 +15,9 @@ class HomePage extends Component {
 				<h1>
 					HomePage {this.state.user} - {this.props.test}
 				</h1>
+				<Button bsStyle="primary" bsSize="large">
+					test
+				</Button>
 			</div>
 		);
 	}
