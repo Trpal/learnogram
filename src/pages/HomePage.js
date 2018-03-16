@@ -6,17 +6,17 @@ class HomePage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: "Joni"
+			user: ""
 		};
 	}
 	render() {
 		return (
 			<div>
 				<h1>
-					HomePage {this.state.user} - {this.props.test}
+					Learn-o-gram
 				</h1>
 				<Button bsStyle="primary" bsSize="large">
-					test
+					Login
 				</Button>
 			</div>
 		);
