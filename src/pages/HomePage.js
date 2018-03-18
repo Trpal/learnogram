@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import { Button } from "react-bootstrap";
+import { Button, Icon, Row, Col } from "react-materialize";
 
 class HomePage extends Component {
 	constructor(props) {
@@ -12,12 +12,8 @@ class HomePage extends Component {
 	render() {
 		return (
 			<div>
-				<h1>
-					Learn-o-gram
-				</h1>
-				<Button bsStyle="primary" bsSize="large">
-					Login
-				</Button>
+				<h1>Learn-o-gram</h1>
+				<Button baves="light">Login</Button>
 			</div>
 		);
 	}
