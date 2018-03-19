@@ -1,9 +1,10 @@
-export default function users(state = {}, action) {
+export default function users(state = { loggedIn: false }, action) {
+	console.log("inReducer");
 	switch (action.type) {
 	case "LOGIN":
-		return state + 1;
+		return { loggedIn: true };
 	case "LOGOUT":
-		return state - 1;
+		return { loggedIn: false };
 	default:
 		return state;
 	}

@@ -1,26 +1,23 @@
 import React, { Component } from "react";
-import PropTypes from "prop-types";
-import { Button, Icon, Row, Col } from "react-materialize";
+import { Link } from "react-router-dom";
 
 class HomePage extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			user: ""
+			user: "test"
 		};
 	}
 	render() {
 		return (
 			<div>
-				<h1>Learn-o-gram</h1>
-				<Button baves="light">Login</Button>
+				<h1>Learn-o-gram {this.state.user}</h1>
+				<Link href="/login" to="/login">
+					Login
+				</Link>
 			</div>
 		);
 	}
 }
-
-HomePage.propTypes = {
-	test: PropTypes.string.isRequired
-};
 
 export default HomePage;

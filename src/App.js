@@ -1,6 +1,6 @@
 import React from "react";
 import { Route } from "react-router-dom";
-import { Button, Icon, Row, Col } from "react-materialize";
+import { Row, Col } from "react-materialize";
 import PropTypes from "prop-types";
 import HomePage from "./pages/HomePage";
 import LoginPage from "./pages/LoginPage";

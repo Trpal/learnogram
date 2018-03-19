@@ -9,7 +9,13 @@ import App from "./App";
 import registerServiceWorker from "./registerServiceWorker";
 import rootReducer from "./reducers/index";
 
-const store = createStore(rootReducer, composeWithDevTools());
+const store = createStore(
+	rootReducer,
+	{
+		login: false,
+	},
+	composeWithDevTools()
+);
 
 ReactDOM.render(
 	<BrowserRouter>
