@@ -12,7 +12,7 @@ class LoginPage extends Component {
 	}
 
 	onLogin() {
-		this.props.onLogin();
+		this.props.onLogin("teppo");
 	}
 
 	onLogout() {
@@ -22,7 +22,7 @@ class LoginPage extends Component {
 	render() {
 		return (
 			<div>
-				<h1>LoginPage</h1>
+				<h1>user - {this.props.user}</h1>
 				{!this.props.isLoggedIn && (
 					<Button onClick={this.onLogin}>login</Button>
 				)}
@@ -35,7 +35,8 @@ class LoginPage extends Component {
 }
 
 const mapStateToProps = state => ({
-	isLoggedIn: !!state.users.loggedIn
+	isLoggedIn: !!state.users.loggedIn,
+	user: state.users.user
 });
 
 const mapActionsToProps = {
@@ -46,7 +47,8 @@ const mapActionsToProps = {
 LoginPage.propTypes = {
 	onLogin: PropTypes.func.isRequired,
 	onLogout: PropTypes.func.isRequired,
-	isLoggedIn: PropTypes.bool.isRequired
+	isLoggedIn: PropTypes.bool.isRequired,
+	user: PropTypes.string.isRequired
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(LoginPage);

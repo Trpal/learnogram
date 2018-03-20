@@ -1,10 +1,15 @@
-export default function users(state = { loggedIn: false }, action) {
-	console.log("inReducer");
+export default function users(state = { loggedIn: false, user: "" }, action) {
 	switch (action.type) {
-	case "LOGIN":
-		return { loggedIn: true };
-	case "LOGOUT":
-		return { loggedIn: false };
+	case "user:LOGIN":
+		return {
+			user: action.payload.user,
+			loggedIn: true
+		};
+	case "user:LOGOUT":
+		return {
+			user: "",
+			loggedIn: false
+		};
 	default:
 		return state;
 	}

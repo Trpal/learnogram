@@ -1,15 +1,19 @@
 // login
-export function login() {
-	console.log("login");
+export function login(user) {
 	return {
-		type: "LOGIN"
+		type: "user:LOGIN",
+		payload: {
+			user
+		}
 	};
 }
 
 // logout
 export function logout() {
-	console.log("logout");
 	return {
-		type: "LOGOUT"
+		type: "user:LOGOUT",
+		payload: {
+			user: ""
+		}
 	};
 }
