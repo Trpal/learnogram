@@ -1,7 +1,10 @@
+export const USER_LOGIN = "users:LOGIN";
+export const USER_LOGOUT = "users:LOGOUT";
+
 // login
 export function login(user) {
 	return {
-		type: "user:LOGIN",
+		type: USER_LOGIN,
 		payload: {
 			user
 		}
@@ -11,7 +14,7 @@ export function login(user) {
 // logout
 export function logout() {
 	return {
-		type: "user:LOGOUT",
+		type: USER_LOGOUT,
 		payload: {
 			user: ""
 		}
