@@ -1,11 +1,13 @@
+import { USER_LOGIN, USER_LOGOUT } from "../actions/user";
+
 export default function users(state = { loggedIn: false, user: "" }, action) {
 	switch (action.type) {
-	case "user:LOGIN":
+	case USER_LOGIN:
 		return {
 			user: action.payload.user,
 			loggedIn: true
 		};
-	case "user:LOGOUT":
+	case USER_LOGOUT:
 		return {
 			user: "",
 			loggedIn: false
