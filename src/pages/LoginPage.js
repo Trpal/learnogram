@@ -23,16 +23,16 @@ class LoginPage extends Component {
 		this.props.onLogout();
 	}
 
-	onSubmit = e => {
-		e.preventDefault();
-		console.log("submit");
+	onSubmit = data => {
+		this.props.onLogin(data.email);
+		console.log(data);
 	};
 
 	render() {
 		return (
 			<div>
 				<Jumbotron>
-					<h1>Loginpage</h1>
+					<h1>Loginpage - {this.props.user}</h1>
 					{!this.props.isLoggedIn && <LoginForm submit={this.onSubmit} />}
 					{this.props.isLoggedIn && (
 						<Button color="danger" onClick={this.onLogout}>
@@ -58,7 +58,8 @@ const mapActionsToProps = {
 LoginPage.propTypes = {
 	onLogin: PropTypes.func.isRequired,
 	onLogout: PropTypes.func.isRequired,
-	isLoggedIn: PropTypes.bool.isRequired
+	isLoggedIn: PropTypes.bool.isRequired,
+	user: PropTypes.string.isRequired
 };
 
 export default connect(mapStateToProps, mapActionsToProps)(LoginPage);

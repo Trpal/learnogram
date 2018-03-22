@@ -3,12 +3,17 @@ import { Button, Form, FormGroup, Label, Input } from "reactstrap";
 import PropTypes from "prop-types";
 
 class LoginForm extends Component {
-	state = {
-		data: {
-			email: "",
-			password: ""
-		}
-	};
+	constructor(props) {
+		super(props);
+		this.onSubmit = this.onSubmit.bind(this);
+
+		this.state = {
+			data: {
+				email: "",
+				password: ""
+			}
+		};
+	}
 
 	onChange = e => {
 		this.setState({
@@ -17,14 +22,16 @@ class LoginForm extends Component {
 		});
 	};
 
-	onSubmit = () => {
+	onSubmit(e) {
+		console.log(e);
+		e.preventDefault();
 		this.props.submit(this.state.data);
-	};
+	}
 
 	render() {
 		const { data } = this.state;
 		return (
-			<Form onSubmit={this.onSubmit}>
+			<Form onSubmit={e => this.onSubmit(e)}>
 				<FormGroup>
 					<Label for="email">Email</Label>
 					<Input
