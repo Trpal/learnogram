@@ -15,6 +15,9 @@ class HomePage extends Component {
 				<Link href="/login" to="/login">
 					Login
 				</Link>
+				<Link href="/resources" to="/resources">
+					Resources
+				</Link>
 			</div>
 		);
 	}

@@ -1,9 +1,9 @@
-export default function resources(state = {}, action) {
+import { RECEIVE_RESOURCES } from "../actions/resource";
+
+export default function resources(state = { items: [] }, action) {
 	switch (action.type) {
-	case "INCREMENT":
-		return state + 1;
-	case "DECREMENT":
-		return state - 1;
+	case RECEIVE_RESOURCES:
+		return { items: [action.payload.data.title] };
 	default:
 		return state;
 	}

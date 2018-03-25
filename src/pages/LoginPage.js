@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Jumbotron, Button, Form, FormGroup, Label, Input } from "reactstrap";
+import { Jumbotron, Button } from "reactstrap";
 import { connect } from "react-redux";
 import PropTypes from "prop-types";
 import { login, logout } from "../actions/user";
@@ -14,7 +14,6 @@ class LoginPage extends Component {
 	}
 
 	onLogin(e) {
-		console.log("asd");
 		e.preventDefault();
 		this.props.onLogin("teppo");
 	}
@@ -25,7 +24,6 @@ class LoginPage extends Component {
 
 	onSubmit = data => {
 		this.props.onLogin(data.email);
-		console.log(data);
 	};
 
 	render() {

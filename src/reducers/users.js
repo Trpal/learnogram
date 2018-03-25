@@ -1,6 +1,9 @@
 import { USER_LOGIN, USER_LOGOUT } from "../actions/user";
 
-export default function users(state = { loggedIn: false, user: "" }, action) {
+export default function users(
+	state = { loggedIn: false, user: "test" },
+	action
+) {
 	switch (action.type) {
 	case USER_LOGIN:
 		return {
